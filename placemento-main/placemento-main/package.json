@@ -1,0 +1,25 @@
+{
+	"name": "Campusly",
+	"version": "1.0.0",
+	"description": "MCA Placement Portal",
+	"scripts": {
+		"dev": "concurrently \"pnpm run server\" \"pnpm run client\"",
+		"server": "pnpm --filter server dev",
+		"client": "pnpm --filter client dev",
+		"build": "pnpm --filter client build",
+		"start": "concurrently \"pnpm run backend-start\" \"pnpm run frontend-start\"",
+		"backend-start": "pnpm --filter server start",
+		"frontend-start": "pnpm --filter client dev",
+		"test": "pnpm run test:server && pnpm run test:client",
+		"test:server": "pnpm --filter server test",
+		"test:client": "pnpm --filter client test",
+		"format": "prettier --write ."
+	},
+	"license": "GPL-3.0",
+	"packageManager": "pnpm@10.28.2",
+	"devDependencies": {
+		"concurrently": "^9.2.0",
+		"prettier": "^3.1.1",
+		"prettier-plugin-organize-imports": "^4.0.0"
+	}
+}
